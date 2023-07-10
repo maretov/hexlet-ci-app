@@ -8,7 +8,7 @@ jobs:
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
-          SNYK-TOKEN: ${{ secrets.SNYK_secret }}
+          SNYK_TOKEN: ${{ secrets.SNYK_SECRET }}
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -16,4 +16,3 @@ jobs:
       - run: make setup
       - run: make test
       - run: make lint
-
